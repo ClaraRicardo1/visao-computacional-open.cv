@@ -1,4 +1,4 @@
-# O código apresentado a seguir exemplifica como carregar um arquivo de imagem e exibi-la	para o usuário.	A	função da biblioteca OpenCV	que	carrega	uma	
+# O código apresentado a seguir exemplifica como carregar um arquivo de imagem e exibi-la para o usuário.	A	função da biblioteca OpenCV	que	carrega	uma	
 imagem a partir de um arquivo é a imread, e a	que	exibe	a	imagem carregada em	uma variável,	a	imshow.
 
 import	cv2
