@@ -8,7 +8,7 @@ Livro utilizado para o estudo dos códigos.
 Os sistemas baseados em Visão Computacional	estão	cada dia mais presentes	em nosso cotidiano e, hoje, existem diversas 
 bibliotecas e linguagens de programação para o desenvolvimento de softwares nessa área. Essa ciência em geral estuda e 
 desenvolve tecnologias para que máquinas possam extrair carcterísticas do meio através de imagens e assim então poder 
-reconhecer, manipular e processas esses dados obtidos.
+reconhecer, manipular e processar esses dados obtidos.
 
 Esse projeto visa mostrar e compreender códigos da bibilioteca OpenCV, utilizando a linguagem de programação Python,que irá 
 seguir uma fluxo bastante conhecido nesse ramo de Visão Computacional, que é: Aquisição de Imagem, Pré-Processamento, Segmentação, 
