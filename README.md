@@ -10,6 +10,6 @@ bibliotecas e linguagens de programação para o desenvolvimento de softwares ne
 desenvolve tecnologias para que máquinas possam extrair carcterísticas do meio através de imagens e assim então poder 
 reconhecer, manipular e processar esses dados obtidos.
 
-Esse projeto visa mostrar e compreender códigos da bibilioteca OpenCV, utilizando a linguagem de programação Python,que irá 
+Esse projeto visa mostrar e compreender códigos da bibilioteca OpenCV, utilizando a linguagem de programação Python, que irá 
 seguir uma fluxo bastante conhecido nesse ramo de Visão Computacional, que é: Aquisição de Imagem, Pré-Processamento, Segmentação, 
-Extração de Características, Reconhecimento de Padrão e por último o Resultado, que é o Processamento Final.
+Extração de Características, Reconhecimento de Padrão e por último o Resultado, na qual é o Processamento Final.
