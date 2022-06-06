@@ -1,0 +1,117 @@
+# 01_CÓDIGOS ACESSSANDO E MODIFICANDO VALORES DE PIXELS (PERAÇÕES BÁSICAS)
+
+import	cv2
+# valor numérico que representa a cor do pixel em uma imagem colorida
+imagem	=	cv2.imread("imgs/imagem.jpeg")
+valorPixel	=	imagem[150,150]
+print(valorPixel)
+
+# valor do pixel em uma imagem em tons de cinza(um único canal)
+imagem	=	cv2.imread("imgs/imagem.jpeg")
+imagem	=	cv2.cvtColor(imagem, cv2.COLOR_RGB2GRAY)
+valorPixel	=	imagem[150,150]
+print(valorPixel)
+
+# intensidade da cor de apenas um canal, de acordo com determinada coordenada
+# canal 0-Azul, canal 1-Verde e canal 2-Vermelho
+imagem	=	cv2.imread("imgs/imagem.jpeg")
+valorPixel	=	imagem[150,150,1]
+print(valorPixel)
+
+# alterando um valor de um determinado pixel
+imagem	=	cv2.imread("imgs/imagem.jpeg")
+print(imagem[150,150])
+imagem[150,150]	=	[255,255,255]
+print(imagem[150,150])
+
+# 02_CÓDIGOS ACESSANDO INFORMAÇÕES SOBRE A IMAGEM (OPERAÇÕES BÁSICAS)
+
+import cv2
+# mostrar o números de linhas, colunas e canais de cor
+imagem	=	cv2.imread("imgs/imagem.jpeg")
+print(imagem.shape)
+
+# total de pixels na imagem
+imagem	=	cv2.imread("imgs/imagem.jpeg")
+print('\n')
+print(imagem.size)
+
+# 03_HISTOGRAMA EM UMA IMAGEM BINÁRIA (HISTOGRAMA DE CORES)
+
+import	cv2
+import	numpy	as	np
+from	matplotlib	import	pyplot	as	grafico
+imagem	=	cv2.imread("imgs/imagem.bmp",	0)
+grafico.hist(imagem.ravel(),	256,	[0,256])
+grafico.show()
+
+# 04_HISTOGRAMA EM UMA IMAGEM COLORIDA (HISTOGRAMA DE CORES)
+
+import	cv2
+import	numpy	as	np
+from	matplotlib	import	pyplot	as	grafico
+imagem	=	cv2.imread("imgs/imagem.bmp")
+azul,	verde,	vermelho	=	cv2.split(imagem)
+grafico.hist(azul.ravel(),	256,	[0,256])
+grafico.figure();
+grafico.hist(verde.ravel(),	256,	[0,256])
+grafico.figure();
+grafico.hist(vermelho.ravel(),	256,	[0,256])
+grafico.show()
+
+# 05_EQUALIZAÇÃO DE HISTOGRAMA (HISTOGRAMA DE CORES)
+# melhora a nitidez e o contraste
+
+import	cv2
+import	numpy	as	np
+from	matplotlib	import	pyplot	as	grafico
+imagemOriginal	=	cv2.imread("imgs/imagem.jpeg",	0)
+imagemEqualizada	=	cv2.equalizeHist(imagemOriginal)
+cv2.imshow("Imagem	Original",	imagemOriginal)
+cv2.imshow("Imagem	Equalizada",	imagemEqualizada)
+grafico.hist(imagemOriginal.ravel(),	256,	[0,256])
+grafico.figure();
+grafico.hist(imagemEqualizada.ravel(),	256,	[0,256])
+grafico.show()
+
+# 06_AJUSTE DE PERSPECTIVA (TRANSFORMAÇÕES GEOMÉTRICAS)
+
+import	cv2
+import	numpy	as	np
+imagemOriginal	=	cv2.imread("imgs/imagem.jpeg")
+pontosIniciais	=	np.float32(
+				[[147,64],	[361,62],	[149,293],	[379,291]]
+)
+pontosFinais	=	np.float32(
+				[[0,0],	[500,0],	[0,500],	[500,500]]
+)
+matriz	=	cv2.getPerspectiveTransform(
+				pontosIniciais,	pontosFinais
+)
+imagemModificada	=	cv2.warpPerspective(
+				imagemOriginal,	matriz,	(500,	500)
+)
+cv2.imshow("Imagem	Original",	imagemOriginal)
+cv2.imshow("Imagem	Modificada",	imagemModificada)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# 07_OPERAÇÃO DE ADIÇÃO IMAGENS (OPERAÇÕES ARITMÉTICAS)
+
+import cv2
+imagemFichasVermelhas	=	cv2.imread("imgs/imagem1.bmp")
+imagemFichasPretas	=	cv2.imread("imgs/imagem2.bmp")
+imagem	=	cv2.add(imagemFichasVermelhas,	imagemFichasPretas)
+cv2.imshow("Resultado",	imagem)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# 08_OPERAÇÃO DE SUBTRAÇÃO IMAGENS (OPERAÇÕES ARITMÉTICAS)
+
+import	cv2
+imagemFichaPosicao1	=	cv2.imread("imgs/imagem1.bmp")
+imagemFichaPosicao2	=	cv2.imread("imgs/imagem2.bmp")
+imagem	=	cv2.subtract(imagemFichaPosicao1,	imagemFichaPosicao2)
+cv2.imshow("Resultado",	imagem)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
