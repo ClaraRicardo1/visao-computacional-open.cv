@@ -1,0 +1,39 @@
+# ACESSSANDO E MODIFICANDO VALORES DE PIXELS (PERAÇÕES BÁSICAS)
+
+import	cv2
+# valor numérico que representa a cor do pixel em uma imagem colorida
+imagem	=	cv2.imread("imgs/imagem.jpeg")
+valorPixel	=	imagem[150,150]
+print(valorPixel)
+
+# valor do pixel em uma imagem em tons de cinza(um único canal)
+imagem	=	cv2.imread("imgs/imagem.jpeg")
+imagem	=	cv2.cvtColor(imagem, cv2.COLOR_RGB2GRAY)
+valorPixel	=	imagem[150,150]
+print(valorPixel)
+
+# intensidade da cor de apenas um canal, de acordo com determinada coordenada
+# canal 0-Azul, canal 1-Verde e canal 2-Vermelho
+imagem	=	cv2.imread("imgs/imagem.jpeg")
+valorPixel	=	imagem[150,150,1]
+print(valorPixel)
+
+# alterando um valor de um determinado pixel
+imagem	=	cv2.imread("imgs/imagem.jpeg")
+print(imagem[150,150])
+imagem[150,150]	=	[255,255,255]
+print(imagem[150,150])
+
+# ACESSANDO INFORMAÇÕES SOBRE A IMAGEM OPERAÇÕES BÁSICAS)
+
+import cv2
+# mostrar o números de linhas, colunas e canais de cor
+imagem	=	cv2.imread("imgs/frutas.jpeg")
+print(imagem.shape)
+
+# total de pixels na imagem
+imagem	=	cv2.imread("imgs/frutas.jpeg")
+print('\n')
+print(imagem.size)
+
+
