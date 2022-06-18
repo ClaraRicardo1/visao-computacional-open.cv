@@ -1,5 +1,6 @@
 # segmentação por cor
 # tratar de ruídos com estrururas morfologicas, para ajeitar as falhas
+
 import	cv2
 import	numpy	as	np
 
@@ -13,4 +14,4 @@ cv2.imshow("Segmentada",	imgSegmentada)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-#
+
