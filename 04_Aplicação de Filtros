@@ -1,1 +1,21 @@
+# o filtro de média é um filtro linear, classificado como passa-baixas, ou seja, para suavização de imagens. Ele substitui cada pixel da imagem pelo valor
+médio de sua vizinhança
+
+import	cv2
+imgOriginal	=	cv2.imread("imgs/imagem.jpeg")
+imgTratada	=	cv2.blur(imgOriginal,	(5,5))
+cv2.imshow("Original",	imgOriginal)
+cv2.imshow("Tratada",	imgTratada)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# filtro gaussiano  também é filtro de suavização
+
+import	cv2
+imgOriginal	=	cv2.imread("imgs/imagem.jpeg")
+imgTratada	=	cv2.GaussianBlur(imgOriginal,	(5,5),	0)
+cv2.imshow("Original",	imgOriginal)
+cv2.imshow("Tratada",	imgTratada)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
