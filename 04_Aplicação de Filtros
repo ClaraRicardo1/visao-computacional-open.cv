@@ -19,3 +19,22 @@ cv2.imshow("Tratada",	imgTratada)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
+# filtro de mediana são técnicas de tratamento de imagem capazes de suavizá-la preservando bordas ou contornos, diferente do gaussiano
+
+import	cv2
+imgOriginal	=	cv2.imread("imgs/imagem.jpeg")
+imgTratada	=	cv2.medianBlur(imgOriginal,	5)
+cv2.imshow("Original",	imgOriginal)
+cv2.imshow("Tratada",	imgTratada)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+# filtro bilateral também suavisa e preserva bordas e contornos, é o mais indica para tal ação, demonstrando ser masi eficiente
+
+import	cv2
+imgOriginal	=	cv2.imread("imgs/imagem.jpeg")
+imgTratada	=	cv2.bilateralFilter(imgOriginal,	9,	75,	75)
+cv2.imshow("Original",	imgOriginal)
+cv2.imshow("Tratada",	imgTratada)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
