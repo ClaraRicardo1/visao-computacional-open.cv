@@ -1,1 +1,8 @@
+# outras informações que podem serem extraída é a média da cor dos pixels que representam	 o objeto segmentado
+
+import	cv2
+
+imgRGB	=	cv2.imread("imgs/tampa-rgb.jpeg")
+valorMedioRGB	=	cv2.mean(imgRGB)
+print(valorMedioRGB)
 
